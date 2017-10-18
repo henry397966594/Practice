@@ -1,43 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
- 
+
     <title>Document</title>
 </head>
+
 <body>
     <div id="box">
-       <ol>
-           <li v-for="(todo,index) in todos">
-                {{todo.text}}
-           </li>
-       </ol>
-       <button @click='show'>你倒是点我啊</button>
-       <p>{{message}}</p>
-       <input type="text"v-model="message">
-  //阻止默认行为是prevent,冒泡是stop
+        <ul>
+            <li v-for="(value,key,index) of items">
+                {{index}} - {{key}} : {{value}}
+            </li>
+        </ul>
     </div>
 </body>
+
 </html>
 <script src="../node_modules/vue/dist/vue.js"></script>
 <script>
-let App = new Vue({
-    el:'#box',
-    data:{
-        message:'who will win ',
-        seen:false,
-        todos:[{ text: '学习 JavaScript' },
-      { text: '学习 Vue' },
-      { text: '整个牛项目' }]
-    },
-    methods:{
-        show:function(){
-          this.message=this.message.split('').reverse().join('')
-        }
-       
-    }
-})
+    let App = new Vue({
+        el: '#box',
+        data: {
+            firstName: 'Henty',
+            lastName: 'Best',
+            items: {
+                name: 'herny',
+                age: 27,
+                sex: 'man'
+            }
 
 
+        },
 
+    })
+    App.fullName = 'John Doe'
 </script>
