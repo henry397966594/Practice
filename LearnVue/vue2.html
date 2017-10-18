@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <script src="../node_modules/vue-resource/dist/vue-resource.js"></script>
+
+</head>
+
+<body>
+    <div id="box">
+        a=>{{a}}
+        b=>{{b}}
+        <hr> 
+        <button @click="click">点我</button>
+    </div>
+    <script>
+        let vm = new Vue({
+            el:'#box',
+            data: {
+                a: 1
+            },
+            methods: {
+                click: function () {
+                    this.a = 100;
+                }
+            },
+            computed: {
+                b: function () {
+                    return this.a + 1
+                }
+            }
+        })
+    
+    </script>
+</body>
+<style>
+    button {
+        height: 100px;
+        width: 100px;
+    }
+</style>
+
+</html>
