@@ -8,32 +8,18 @@
 </head>
 
 <body>
-    <div id="box">
-        <ul>
-            <li v-for="(value,key,index) of items">
-                {{index}} - {{key}} : {{value}}
-            </li>
-        </ul>
-    </div>
+        <div id="app3">
+                <my-component2 att="helloParent"></my-component2>
+            </div>
 </body>
 
 </html>
 <script src="../node_modules/vue/dist/vue.js"></script>
 <script>
-    let App = new Vue({
-        el: '#box',
-        data: {
-            firstName: 'Henty',
-            lastName: 'Best',
-            items: {
-                name: 'herny',
-                age: 27,
-                sex: 'man'
-            }
-
-
-        },
-
-    })
-    App.fullName = 'John Doe'
+   Vue.component('my-component2', {
+    template: `<div att="helloChild">子组件原有的特性被覆盖了</div>`
+  })
+  new Vue({
+    el: '#app3'
+  })
 </script>
