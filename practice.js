@@ -119,21 +119,45 @@
 //   var c = new Child("zhangsan","lisi");
 //   c.sayHello();
 //   c.sayWorld(); 
-var name = 'window';
-var Tom = {
-name:'Tom',
-show:function(){
- console.log(this.name);
-},
-wait:function(){
- var fun = this.show;
- fun();
-}
-};
-Tom.wait();
+//  var num = 100;
+//  var obj={
+//      num:200,
+//      inner:{
+//          num:300,
+//          print:function(){
+//              console.log(this)
+//             console.log(this.num);
 
+             
+//          }
+//      }
+//  };
+//  obj.inner.print(); //300
+//  var func=obj.inner.print;
+//  func(); //undefind
+//  (obj.inner.print)();//300
+//  (obj.inner.print=obj.inner.print)()//undefined
+// var a,b;
+// (function(){
+//   function A (arg1,arg2) {
+//     this.a = 1;
+//     this.b=2; 
+//   }
 
-
-
-
+//   A.prototype.log = function () {
+//     console.log(this.a);
+//   }
+//   a = new A();
+//   b = new A();
+// })()
+// a.log();
+// // 1
+// b.log();
+// // 1
+// a.constructor.prototype.log2=function(){
+//     console.log(this.b);
+    
+// }
+// a.log2();
+// b.log2()
 
